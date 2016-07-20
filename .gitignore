@@ -62,5 +62,5 @@ target/
 # JetBrains
 .idea/
 
-
+/calendary/Scripts/
 
