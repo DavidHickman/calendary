@@ -24,7 +24,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="David Hickman",
     author_email='davidhickman13@gmail.com',
-    url='https://github.com/davidhickman/calendary',
+    url='https://github.com/DavidHickman/calendary',
     packages=[
         'calendary',
     ],
