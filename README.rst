@@ -6,8 +6,8 @@ calendary
 .. image:: https://img.shields.io/pypi/v/calendary.svg
         :target: https://pypi.python.org/pypi/calendary
 
-.. image:: https://img.shields.io/travis/davidhickman/calendary.svg
-        :target: https://travis-ci.org/davidhickman/calendary
+.. image:: https://travis-ci.org/DavidHickman/calendary.svg?branch=master
+    :target: https://travis-ci.org/DavidHickman/calendary
 
 .. image:: https://readthedocs.org/projects/calendary/badge/?version=latest
         :target: https://calendary.readthedocs.io/en/latest/?badge=latest
