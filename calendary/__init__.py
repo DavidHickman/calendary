@@ -2,6 +2,6 @@
 
 __author__ = 'David Hickman'
 __email__ = 'davidhickman13@gmail.com'
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 from .calendary import Calendary
