@@ -33,8 +33,8 @@ Features
 --------
 
 Return a list of days for any year
-.. code-block:: python
 
+.. code-block:: python
     cal = Calendary(2016)
 
     weekdays = cal.weekday_calendar()
