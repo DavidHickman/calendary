@@ -58,7 +58,7 @@ Return a list of only workdays (default: Monday-Friday)
 
     workdays = cal.workday_calendar()
 
-    for weekday, date in work:
+    for weekday, date in workdays:
         print(weekday, date)
 
 
@@ -92,7 +92,7 @@ Get a specific date relative to the calendar
     cal = Calendary(2016)
 
     # Get the third Thursday in July of 2016
-    cal.weekday('Thursday', month=7, oridinal=3)
+    cal.weekday('Thursday', month=7, ordinal=3)
 
     # Get all Thursdays in July 2016
     cal.weekday('Thursday', month=7)
