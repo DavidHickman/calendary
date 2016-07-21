@@ -4,4 +4,4 @@ Usage
 
 To use calendary in a project::
 
-    import calendary
+    from calendary import Calendary
