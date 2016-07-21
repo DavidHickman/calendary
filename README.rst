@@ -51,6 +51,7 @@ Return a list of days for any year
 
 
 Return a list of only workdays (default: Monday-Friday)
+
 .. code-block:: python
     :linenos:
 
@@ -63,6 +64,7 @@ Return a list of only workdays (default: Monday-Friday)
 
 
 Change the workweek begin and end
+
 .. code-block:: python
     :linenos:
 
@@ -73,6 +75,7 @@ Change the workweek begin and end
 
 
 Get the calendar for a specific month
+
 .. code-block:: python
     :linenos:
 
@@ -86,6 +89,7 @@ Get the calendar for a specific month
 
 
 Get a specific date relative to the calendar
+
 .. code-block:: python
     :linenos:
 
