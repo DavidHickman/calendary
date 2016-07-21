@@ -34,7 +34,6 @@ Features
 
 Return a list of days for any year
 .. code-block:: python
-    :linenos:
 
     cal = Calendary(2016)
 
