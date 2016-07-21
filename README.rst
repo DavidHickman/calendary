@@ -17,6 +17,10 @@ calendary
      :target: https://pyup.io/repos/github/davidhickman/calendary/
      :alt: Updates
 
+.. image:: https://pyup.io/repos/github/davidhickman/calendary/python-3-shield.svg
+     :target: https://pyup.io/repos/github/davidhickman/calendary/
+     :alt: Python 3
+
 
 Python calendar and datetime helpers.
 
