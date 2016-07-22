@@ -33,10 +33,13 @@ class Calendary(object):
         :param workweek_end: (int) index of the weekday starting with Monday (0)
         :return (list) of tuples ((str) weekday, datetime.date)
         """
+        _workweek_start = self._clean_weekday_param(workweek_start)[0]
+        _workweek_end = self._clean_weekday_param(workweek_end)[0]
+
         _workday_calendar = set()
 
         for day in self.weekday_calendar():
-            if day[1].weekday() in range(workweek_start, workweek_end + 1) and day[1].year == self.year:
+            if day[1].weekday() in range(_workweek_start, _workweek_end + 1) and day[1].year == self.year:
                 _workday_calendar.add(day)
 
         return sorted(list(_workday_calendar), key=lambda x: x[1])
@@ -50,10 +53,15 @@ class Calendary(object):
         :param workweek_end: (int) index of the weekday starting with Monday (0)
         :return (list) of tuples ((str) weekday, datetime.date)
         """
+
+        _workweek_start = self._clean_weekday_param(workweek_start)[0]
+        _workweek_end = self._clean_weekday_param(workweek_end)[0]
+
         _month_calendar = set()
 
         if work:
-            _cal = self.workday_calendar(workweek_start, workweek_end)
+            _cal = self.workday_calendar(_workweek_start, _workweek_end)
+
         else:
             _cal = self.weekday_calendar()
 
@@ -71,7 +79,8 @@ class Calendary(object):
         :param ordinal: (int) number of day in month or year (third thursday of month or year)
         :return (list) of tuples ((str) weekday, datetime.date)
         """
-        _weekday = weekday.title()
+
+        _weekday = self._clean_weekday_param(weekday)
         _weekday_list = set()
 
         if month:
@@ -81,10 +90,46 @@ class Calendary(object):
             _cal = self.weekday_calendar()
 
         for day in _cal:
-            if calendar.day_name[day[1].weekday()] == _weekday:
+            if day[1].weekday() in _weekday:
                 _weekday_list.add(day)
 
         if ordinal:
             return sorted(list(_weekday_list), key=lambda x: x[1])[ordinal - 1]
         else:
             return sorted(list(_weekday_list), key=lambda x: x[1])
+
+    @staticmethod
+    def _clean_weekday_param(weekday_arg):
+        """
+        Takes the given weekday argument from the user and returns a set of integers for input.
+        :param weekday_arg: (int) or (str) or (list) or (tuple) input argument from user
+        :return: (set)
+        """
+
+        _weekday_lookup = {
+            "Monday": 0,
+            "Tuesday": 1,
+            "Wednesday": 2,
+            "Thursday": 3,
+            "Friday": 4,
+            "Saturday": 5,
+            "Sunday": 6
+        }
+
+        if isinstance(weekday_arg, str):
+            _cleaned_arg = {_weekday_lookup[weekday_arg.title()]}
+
+        elif isinstance(weekday_arg, int) and weekday_arg in range(0, 7):
+            _cleaned_arg = {weekday_arg}
+
+        elif isinstance(weekday_arg, list) or isinstance(weekday_arg, tuple):
+            _cleaned_arg = set()
+            for w in weekday_arg:
+                if isinstance(w, str):
+                    w = _weekday_lookup[w.title()]
+                elif isinstance(w, int) and w in range(0, 7):
+                    w = w
+
+                _cleaned_arg.add(w)
+
+        return sorted(list(_cleaned_arg))

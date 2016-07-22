@@ -72,3 +72,27 @@ class TestCalendary(object):
     def test_calendary_weekday_returns_right_day_for_year(self):
         first_monday_in_nineteen_fortyseven = Calendary(1947).weekday('Monday', ordinal=1)
         assert first_monday_in_nineteen_fortyseven == ('Monday', datetime.date(month=1, day=6, year=1947))
+
+    def test_clean_weekday_param_string(self):
+        string_weekday = Calendary._clean_weekday_param("Monday")
+        assert isinstance(string_weekday, list)
+        assert isinstance(string_weekday[0], int)
+
+    def test_clean_weekday_param_list(self):
+        string_weekday = Calendary._clean_weekday_param(["Monday", 3])
+        assert isinstance(string_weekday, list)
+        assert isinstance(string_weekday[0], int)
+
+    def test_clean_weekday_param_tuple(self):
+        string_weekday = Calendary._clean_weekday_param(("Monday", 3))
+        assert isinstance(string_weekday, list)
+        assert isinstance(string_weekday[0], int)
+
+    def test_weekday_with_multiple_inputs_returns_multiple_days(self):
+        mondays_and_tuesdays = Calendary(2016).weekday((0, 1), month=7)
+        mondays = [d[1] for d in mondays_and_tuesdays if d[0] == 'Monday']
+        tuesdays = [d[1] for d in mondays_and_tuesdays if d[0] == 'Tuesday']
+        monday_july_eighteenth = datetime.date(year=2016, month=7, day=18)
+        tuesday_july_nineteenth = datetime.date(year=2016, month=7, day=19)
+        assert monday_july_eighteenth in mondays
+        assert tuesday_july_nineteenth in tuesdays
