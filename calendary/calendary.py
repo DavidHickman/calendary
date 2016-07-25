@@ -33,8 +33,8 @@ class Calendary(object):
         :param workweek_end: (int) index of the weekday starting with Monday (0)
         :return (list) of tuples ((str) weekday, datetime.date)
         """
-        _workweek_start = self._clean_weekday_param(workweek_start)[0]
-        _workweek_end = self._clean_weekday_param(workweek_end)[0]
+        _workweek_start = workweek_start
+        _workweek_end = workweek_end
 
         _workday_calendar = set()
 
@@ -54,8 +54,8 @@ class Calendary(object):
         :return (list) of tuples ((str) weekday, datetime.date)
         """
 
-        _workweek_start = self._clean_weekday_param(workweek_start)[0]
-        _workweek_end = self._clean_weekday_param(workweek_end)[0]
+        _workweek_start = workweek_start
+        _workweek_end = workweek_end
 
         _month_calendar = set()
 

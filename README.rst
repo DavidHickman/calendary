@@ -103,6 +103,9 @@ Get a specific date relative to the calendar
     # Get all Thursdays in 2016
     cal.weekday('Thursday')
 
+    # Get all Mondays and Thursdays in July, 2016 using weekday index values
+    cal.weekday((0, 3), month=7)
+
 
 Credits
 ---------
