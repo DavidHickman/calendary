@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import calendar
+from operator import itemgetter
 
 
 class Calendary(object):
@@ -9,7 +10,8 @@ class Calendary(object):
 
     def __init__(self, year):
         self.year = year
-        self.year_calendar = (calendar.Calendar().yeardatescalendar(self.year, 12)[0])
+        self.year_calendar = (calendar.Calendar().yeardatescalendar(self.year,
+                                                                    12)[0])
 
     def weekday_calendar(self):
         """
@@ -22,15 +24,19 @@ class Calendary(object):
             for week in month:
                 for day in week:
                     if day.year == self.year:
-                        _weekday_calendar.add((calendar.day_name[day.weekday()], day))
+                        _weekday_calendar.add(
+                            (calendar.day_name[day.weekday()], day)
+                        )
 
         return sorted(list(_weekday_calendar), key=lambda x: x[1])
 
     def workday_calendar(self, workweek_start=0, workweek_end=4):
         """
         Append the workday to each date for the calendar year.
-        :param workweek_start: (int) index of the weekday starting with Monday (0)
-        :param workweek_end: (int) index of the weekday starting with Monday (0)
+        :param workweek_start: (int) index of the weekday starting with
+        Monday (0)
+        :param workweek_end: (int) index of the weekday starting with
+        Monday (0)
         :return (list) of tuples ((str) weekday, datetime.date)
         """
         _workweek_start = workweek_start
@@ -39,7 +45,8 @@ class Calendary(object):
         _workday_calendar = set()
 
         for day in self.weekday_calendar():
-            if day[1].weekday() in range(_workweek_start, _workweek_end + 1) and day[1].year == self.year:
+            if (day[1].weekday() in range(_workweek_start, _workweek_end + 1)
+                    and day[1].year == self.year):
                 _workday_calendar.add(day)
 
         return sorted(list(_workday_calendar), key=lambda x: x[1])
@@ -49,8 +56,10 @@ class Calendary(object):
         Get all of the days in a given month
         :param month: (int) the number of the month to collect days
         :param work: (bool) limit the returned days to monday - friday
-        :param workweek_start: (int) index of the weekday starting with Monday (0)
-        :param workweek_end: (int) index of the weekday starting with Monday (0)
+        :param workweek_start: (int) index of the weekday starting with
+        Monday (0)
+        :param workweek_end: (int) index of the weekday starting with
+        Monday (0)
         :return (list) of tuples ((str) weekday, datetime.date)
         """
 
@@ -76,7 +85,8 @@ class Calendary(object):
         Get a list of all days in a month given a weekday name
         :param weekday: (str) name of the weekday
         :param month: (int) number of the month
-        :param ordinal: (int) number of day in month or year (third thursday of month or year)
+        :param ordinal: (int) number of day in month or year (third
+        thursday of month or year)
         :return (list) of tuples ((str) weekday, datetime.date)
         """
 
@@ -94,15 +104,33 @@ class Calendary(object):
                 _weekday_list.add(day)
 
         if ordinal:
-            return sorted(list(_weekday_list), key=lambda x: x[1])[ordinal - 1]
+            if isinstance(ordinal, int):
+                return sorted(
+                    list(_weekday_list), key=lambda x: x[1]
+                )[ordinal - 1]
+            else:
+                _return_days = set()
+                _ordinals = [i-1 for i in ordinal]
+
+                for w in _weekday:
+                    _day_list = sorted([wd for wd in _weekday_list
+                                        if wd[1].weekday() == w],
+                                       key=lambda x: x[1])
+
+                    for _d in itemgetter(*_ordinals)(_day_list):
+                        _return_days.add(_d)
+            return sorted(list(_return_days), key=lambda x: x[1])
+
         else:
             return sorted(list(_weekday_list), key=lambda x: x[1])
 
     @staticmethod
     def _clean_weekday_param(weekday_arg):
         """
-        Takes the given weekday argument from the user and returns a set of integers for input.
-        :param weekday_arg: (int) or (str) or (list) or (tuple) input argument from user
+        Takes the given weekday argument from the user and returns a
+        set of integers for input.
+        :param weekday_arg: (int) or (str) or (list) or (tuple)
+        input argument from user
         :return: (set)
         """
 

@@ -96,3 +96,11 @@ class TestCalendary(object):
         tuesday_july_nineteenth = datetime.date(year=2016, month=7, day=19)
         assert monday_july_eighteenth in mondays
         assert tuesday_july_nineteenth in tuesdays
+
+    def test_weekday_with_multiple_ordinals(self):
+        mondays = Calendary(2016).weekday(0, month=7, ordinal=(2, 4))
+        assert len(mondays) == 2
+
+    def test_weekday_with_multiple_days_and_multiple_ordinals(self):
+        mondays_and_thursdays = Calendary(2016).weekday((0, 3), month=7, ordinal=(2, 4))
+        assert len(mondays_and_thursdays) == 4
