@@ -10,8 +10,9 @@ class Calendary(object):
 
     def __init__(self, year):
         self.year = year
-        self.year_calendar = (calendar.Calendar().yeardatescalendar(self.year,
-                                                                    12)[0])
+        self.year_calendar = (
+            calendar.Calendar().yeardatescalendar(self.year, 12)[0]
+        )
 
     def weekday_calendar(self):
         """
@@ -45,8 +46,9 @@ class Calendary(object):
         _workday_calendar = set()
 
         for day in self.weekday_calendar():
-            if (day[1].weekday() in range(_workweek_start, _workweek_end + 1)
-                    and day[1].year == self.year):
+            if (day[1].weekday() in
+                range(_workweek_start, _workweek_end + 1) and
+                    day[1].year == self.year):
                 _workday_calendar.add(day)
 
         return sorted(list(_workday_calendar), key=lambda x: x[1])
@@ -110,7 +112,7 @@ class Calendary(object):
                 )[ordinal - 1]
             else:
                 _return_days = set()
-                _ordinals = [i-1 for i in ordinal]
+                _ordinals = [i - 1 for i in ordinal]
 
                 for w in _weekday:
                     _day_list = sorted([wd for wd in _weekday_list
