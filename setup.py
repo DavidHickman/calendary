@@ -19,7 +19,7 @@ test_requirements = [
 
 setup(
     name='calendary',
-    version='version='0.3.9'',
+    version='0.3.9',
     description="Python calendar helper.",
     long_description=readme + '\n\n' + history,
     author="David Hickman",
