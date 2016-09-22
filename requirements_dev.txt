@@ -12,7 +12,7 @@ cffi==1.8.3 # via cryptography
 colorama==0.3.7           # via pytest, sphinx
 configparser==3.5.0       # via flake8
 coverage==4.2
-cryptography==1.5
+cryptography==1.5.1
 docutils==0.12            # via sphinx
 enum34==1.1.6             # via cryptography, flake8
 flake8==3.0.4
