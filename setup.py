@@ -10,7 +10,6 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    # TODO: put package requirements here
 ]
 
 test_requirements = [
@@ -19,7 +18,7 @@ test_requirements = [
 
 setup(
     name='calendary',
-    version='0.3.11',
+    version='0.3.12',
     description="Python calendar helper.",
     long_description=readme + '\n\n' + history,
     author="David Hickman",
