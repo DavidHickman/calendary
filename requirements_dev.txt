@@ -11,7 +11,7 @@ bumpversion==0.5.3
 cffi==1.8.3               # via cryptography
 colorama==0.3.7           # via pytest, sphinx
 coverage==4.2
-cryptography==1.5.1
+cryptography==1.5.2
 docutils==0.12            # via sphinx
 flake8==3.0.4
 idna==2.1                 # via cryptography
