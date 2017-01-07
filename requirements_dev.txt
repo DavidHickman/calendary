@@ -18,7 +18,7 @@ flake8==3.2.1
 idna==2.1                 # via cryptography
 imagesize==0.7.1          # via sphinx
 ipaddress==1.0.17         # via cryptography
-Jinja2==2.8               # via sphinx
+Jinja2==2.9 # via sphinx
 MarkupSafe==0.23          # via jinja2
 mccabe==0.5.3 # via flake8
 pathtools==0.1.2          # via watchdog
