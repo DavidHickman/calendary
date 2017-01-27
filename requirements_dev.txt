@@ -17,7 +17,7 @@ enum34==1.1.6             # via cryptography, flake8
 flake8==3.2.1
 idna==2.2 # via cryptography
 imagesize==0.7.1          # via sphinx
-ipaddress==1.0.17         # via cryptography
+ipaddress==1.0.18         # via cryptography
 Jinja2==2.9.4 # via sphinx
 MarkupSafe==0.23          # via jinja2
 mccabe==0.5.3 # via flake8
