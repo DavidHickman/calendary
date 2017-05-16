@@ -23,7 +23,7 @@ MarkupSafe==0.23          # via jinja2
 mccabe==0.6.1 # via flake8
 pathtools==0.1.2          # via watchdog
 pluggy==0.4.0 # via tox
-py==1.4.32 # via pytest, tox
+py==1.4.33 # via pytest, tox
 pyasn1==0.1.9             # via cryptography
 pycodestyle==2.2.0 # via flake8
 pycparser==2.17 # via cffi
