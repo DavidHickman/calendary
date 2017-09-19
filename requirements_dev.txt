@@ -19,7 +19,7 @@ idna==2.2 # via cryptography
 imagesize==0.7.1          # via sphinx
 ipaddress==1.0.18         # via cryptography
 Jinja2==2.9.4 # via sphinx
-MarkupSafe==0.23          # via jinja2
+MarkupSafe==1.0          # via jinja2
 mccabe==0.6.1 # via flake8
 pathtools==0.1.2          # via watchdog
 pluggy==0.4.0 # via tox
