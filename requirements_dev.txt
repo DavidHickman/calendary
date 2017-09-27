@@ -38,7 +38,7 @@ Sphinx==1.6.4
 tox==2.5.0
 virtualenv==15.1.0 # via tox
 watchdog==0.8.3
-wheel==0.29.0
+wheel==0.30.0
 
 # The following packages are commented out because they are
 # considered to be unsafe in a requirements file:
