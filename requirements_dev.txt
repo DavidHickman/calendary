@@ -32,7 +32,7 @@ Pygments==2.2.0           # via sphinx
 pytest==3.0.6
 pytz==2017.2 # via babel
 PyYAML==3.12              # via watchdog
-six==1.10.0               # via cryptography, sphinx
+six==1.11.0               # via cryptography, sphinx
 snowballstemmer==1.2.1    # via sphinx
 Sphinx==1.6.4
 tox==2.5.0
