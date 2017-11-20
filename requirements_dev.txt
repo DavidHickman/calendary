@@ -14,7 +14,7 @@ coverage==4.4.1
 cryptography==2.1.3
 docutils==0.14 # via sphinx
 enum34==1.1.6             # via cryptography, flake8
-flake8==3.2.1
+flake8==3.5.0
 idna==2.6 # via cryptography
 imagesize==0.7.1          # via sphinx
 ipaddress==1.0.18         # via cryptography
