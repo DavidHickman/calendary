@@ -10,7 +10,7 @@ babel==2.3.4              # via sphinx
 bumpversion==0.5.3
 cffi==1.11.2 # via cryptography
 configparser==3.5.0       # via flake8
-coverage==4.4.2
+coverage==4.5
 cryptography==2.1.4
 docutils==0.14 # via sphinx
 enum34==1.1.6             # via cryptography, flake8
