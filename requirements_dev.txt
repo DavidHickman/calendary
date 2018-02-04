@@ -34,7 +34,7 @@ pytz==2017.2 # via babel
 PyYAML==3.12              # via watchdog
 six==1.10.0               # via cryptography, sphinx
 snowballstemmer==1.2.1    # via sphinx
-Sphinx==1.6.5
+Sphinx==1.6.7
 tox==2.9.1
 virtualenv==15.1.0 # via tox
 watchdog==0.8.3
